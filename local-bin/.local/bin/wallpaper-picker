@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+export PATH="$HOME/.local/bin:$PATH"
+export GTK_THEME=Adwaita:dark
+exec waypaper "$@"

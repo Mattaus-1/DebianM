@@ -1,0 +1,26 @@
+#!/bin/bash
+export PATH="$HOME/.local/bin:$PATH"
+
+# Unlock and monitor-resume events may arrive together.
+exec 9>"${XDG_RUNTIME_DIR:?}/wallpaper-restore.lock"
+flock -n 9 || exit 0
+
+state_file="$HOME/.local/state/wallpaper-current"
+[[ -r "$state_file" ]] || exit 0
+wallpaper=$(<"$state_file")
+[[ -f "$wallpaper" ]] || exit 0
+
+# Allow the compositor to finish bringing the outputs back.
+sleep 0.5
+if ! swww query >/dev/null 2>&1 && ! pgrep -u "$UID" -x swww-daemon >/dev/null; then
+    swww-daemon 9>&- &
+fi
+
+for ((attempt = 0; attempt < 10; attempt++)); do
+    if swww query >/dev/null 2>&1 &&
+       swww img "$wallpaper" --transition-type none; then
+        exit 0
+    fi
+    sleep 0.5
+done
+exit 1

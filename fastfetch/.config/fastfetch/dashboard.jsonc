@@ -1,0 +1,4 @@
+{
+  "logo": {"type": "file", "source": "~/.config/fastfetch/Au5_ascii.fastfetch.txt", "padding": {"right": 3}},
+  "modules": ["title", "separator", "os", "host", "kernel", "uptime", "packages", "shell", "display", "wm", "terminal", "cpu", "gpu", "memory", "disk", "colors"]
+}

@@ -1,0 +1,20 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-layer": "overlay",
+  "control-center-margin-top": 48,
+  "control-center-margin-right": 10,
+  "control-center-width": 440,
+  "notification-window-width": 400,
+  "cssPriority": "user",
+  "fit-to-screen": true,
+  "timeout": 10,
+  "timeout-critical": 0,
+  "widgets": ["title", "dnd", "notifications", "mpris", "volume"],
+  "widget-config": {
+    "title": {"text": "Notificações", "button-text": "Limpar", "clear-all-button": true},
+    "dnd": {"text": "Não perturbe"},
+    "mpris": {"image-radius": 12, "image-size": 96},
+    "volume": {"label": "", "show-per-app": true}
+  }
+}

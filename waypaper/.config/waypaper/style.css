@@ -1,0 +1,106 @@
+/* Dark gallery with a red accent, scoped to Waypaper's CSS provider. */
+@define-color theme_selected_bg_color #d94a56;
+@define-color theme_selected_fg_color #ffffff;
+
+window {
+    background-color: transparent;
+    color: #e5e7ef;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 10pt;
+}
+
+button {
+    background-image: none;
+    background-color: #242735;
+    color: #e5e7ef;
+    border: 1px solid #353a4c;
+    border-radius: 6px;
+    padding: 3px;
+    box-shadow: none;
+    text-shadow: none;
+    transition: 160ms ease-in-out;
+}
+
+button:hover {
+    background-color: #323647;
+    border-color: #d94a56;
+}
+
+button:active, button:checked {
+    background-color: #532d38;
+    border-color: #ed6571;
+}
+
+button:disabled {
+    color: #73798e;
+    background-color: #1c1f29;
+}
+
+button.highlighted-button {
+    border: 2px solid #ed6571;
+    background-color: #3a2631;
+    box-shadow: 0 0 0 2px alpha(#ed6571, 0.15);
+}
+
+entry, spinbutton {
+    background-color: #1b1e29;
+    color: #eef0f7;
+    border: 1px solid #353a4c;
+    border-radius: 10px;
+    padding: 8px 10px;
+    box-shadow: none;
+}
+
+entry:focus, spinbutton:focus {
+    border-color: #ed6571;
+    box-shadow: 0 0 0 2px alpha(#ed6571, 0.12);
+}
+
+entry selection {
+    background-color: #a83b49;
+    color: #ffffff;
+}
+
+scrolledwindow, viewport {
+    background-color: transparent;
+    border: none;
+}
+
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: #44495c;
+    border-radius: 8px;
+    min-width: 6px;
+    min-height: 28px;
+}
+
+scrollbar slider:hover {
+    background-color: #d94a56;
+}
+
+menu, popover {
+    background-color: #202330;
+    color: #e5e7ef;
+    border: 1px solid #353a4c;
+    border-radius: 10px;
+}
+
+menuitem:hover {
+    background-color: #532d38;
+}
+
+checkbutton check:checked {
+    background-color: #d94a56;
+    border-color: #ed6571;
+    color: white;
+}
+
+tooltip {
+    background-color: #242735;
+    color: #eef0f7;
+    border: 1px solid #44495c;
+    border-radius: 8px;
+}

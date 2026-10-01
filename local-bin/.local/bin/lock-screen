@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Both the keyboard shortcut and hypridle use this entry point.
+exec 9>"${XDG_RUNTIME_DIR:?}/lock-screen.lock"
+flock -n 9 || exit 0
+pgrep -u "$UID" -x hyprlock >/dev/null && exit 0
+
+if hyprlock; then
+    "$HOME/.local/bin/wallpaper-restore"
+fi
