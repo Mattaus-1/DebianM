@@ -9,6 +9,7 @@ Configuracoes do meu desktop Debian/Hyprland, organizadas como pacotes para o
 - `waybar`: barra de status
 - `kitty`: terminal
 - `rofi`: launcher com cores do Pywal
+- `wofi`: launcher de aplicativos com tema escuro e navegacao pelas setas
 - `swaync`: central de notificacoes
 - `waypaper`: seletor de wallpapers
 - `fastfetch`: configuracao usada pelo dashboard
@@ -47,7 +48,7 @@ Clone o repositorio diretamente na sua pasta pessoal e crie os links:
 ```bash
 git clone URL_DO_REPOSITORIO ~/dotfiles
 cd ~/dotfiles
-stow --target="$HOME" hypr waybar kitty rofi swaync waypaper fastfetch local-bin
+stow --target="$HOME" hypr waybar kitty rofi wofi swaync waypaper fastfetch local-bin
 ```
 
 Se os caminhos de destino ja existirem como arquivos normais, faca backup e
@@ -58,13 +59,19 @@ Para remover os links:
 
 ```bash
 cd ~/dotfiles
-stow --delete --target="$HOME" hypr waybar kitty rofi swaync waypaper fastfetch local-bin
+stow --delete --target="$HOME" hypr waybar kitty rofi wofi swaync waypaper fastfetch local-bin
 ```
 
 ## Ajustes da maquina
 
 Edite os monitores no inicio de `hypr/.config/hypr/hyprland.lua`. A configuracao
 atual usa `DP-3` e `HDMI-A-1`, com dois workspaces em cada monitor.
+
+`Super+Espaco` abre o Wofi. Use as setas para cima/baixo para selecionar um
+aplicativo, Enter para abrir e Esc para fechar.
+
+`Super+scroll`, em qualquer direcao, alterna entre os dois workspaces do
+monitor em foco. O script de alternancia nao adiciona trava nem espera.
 
 O Waypaper procura imagens em `~/Imagens`. Depois de escolher um wallpaper, os
 scripts geram a paleta em `~/.cache/wal` e atualizam Waybar, Rofi, Kitty, SwayNC,

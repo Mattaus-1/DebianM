@@ -1,0 +1,16 @@
+width=620
+height=460
+location=center
+show=drun
+prompt=Pesquisar aplicativos…
+allow_images=true
+image_size=32
+insensitive=true
+term=kitty
+hide_scroll=true
+no_actions=true
+gtk_dark=true
+key_up=Up
+key_down=Down
+key_submit=Return
+key_exit=Escape
