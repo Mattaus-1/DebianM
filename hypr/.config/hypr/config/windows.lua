@@ -1,3 +1,14 @@
+hl.window_rule({
+    name  = "waypaper-popup",
+    match = { class = "^([Ww]aypaper)$" },
+    no_blur = true,
+    no_shadow = true,
+    opacity = "1.0 1.0",
+    float = true,
+    size = "900 650",
+    center = true,
+})
+
 local suppressMaximizeRule = hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
     name           = "suppress-maximize-events",

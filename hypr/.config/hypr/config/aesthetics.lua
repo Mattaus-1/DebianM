@@ -155,7 +155,7 @@ hl.layer_rule({
 
 hl.window_rule({
     match = { class = "^(firefox)$" },
-    opacity = "0.85 0.75"
+    opacity = "1.0 1.0"
 })
 
 hl.window_rule({
@@ -165,24 +165,24 @@ hl.window_rule({
 
 hl.window_rule({
     match = { class = "^(dev.zed.Zed)$" },
-    opacity = "0.85 0.75"
+    opacity = "1.0 1.0"
 })
 
 hl.window_rule({
     match = { class = "^(Spotify)$" },
-    opacity = "0.85 0.75",
+    opacity = "1.0 1.0",
     workspace = 3
 })
 
 hl.window_rule({
     match = { class = "^(obsidian)$" },
-    opacity = "0.85 0.75",
+    opacity = "1.0 1.0",
     workspace = 4
 })
 
 hl.window_rule({
     match = { class = "^(nautilus)$" },
-    opacity = "0.85 0.75"
+    opacity = "1.0 1.0"
 })
 
 hl.layer_rule({

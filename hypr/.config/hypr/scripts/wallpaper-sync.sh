@@ -8,7 +8,8 @@ exec 9>"$HOME/.cache/wal/iridescent.lock"
 flock 9
 swww img "$wallpaper" --transition-type fade --transition-duration 1
 printf '%s\n' "$wallpaper" > "$HOME/.local/state/wallpaper-current"
-wal -i "$wallpaper" --backend modern_colorthief --contrast 3 -n -q -t -e
+python3 "$HOME/.config/hypr/scripts/wal-palette.py" "$wallpaper"
+bash "$HOME/.config/hypr/scripts/kitty-palette-sync.sh"
 ln -sfn "$wallpaper" "$HOME/.cache/wal/current_wallpaper"
 python3 "$HOME/.config/hypr/scripts/sync-palette.py"
 bash "$HOME/.config/hypr/scripts/btop-pywal-theme.sh"

@@ -27,13 +27,15 @@ Dependencias principais:
 
 ```text
 hyprland hypridle hyprlock waybar swaync kitty rofi wofi waypaper
-swww pywal python3 jq btop fastfetch cava yazi tty-clock unimatrix
+swww pywal python3 python3-pil jq btop fastfetch cava yazi tty-clock unimatrix
 pipewire wireplumber nautilus google-chrome-stable
 ```
 
 Tambem sao usadas as fontes JetBrains Mono, Symbols Nerd Font, FontAwesome,
-Noto Sans e Noto Sans Mono CJK JP. O script de cores espera o backend
-`modern_colorthief` do Pywal.
+Noto Sans e Noto Sans Mono CJK JP. O script `wal-palette.py` usa Pillow para
+extrair as cores do wallpaper e Pywal para exportar a paleta. Imagens em tons
+de cinza geram uma paleta monocromatica; imagens coloridas preservam seus tons
+com ajustes de contraste para legibilidade.
 
 ## Instalacao
 
@@ -46,7 +48,7 @@ sudo apt install stow
 Clone o repositorio diretamente na sua pasta pessoal e crie os links:
 
 ```bash
-git clone URL_DO_REPOSITORIO ~/dotfiles
+git clone https://github.com/Mattaus-1/DebianM.git ~/dotfiles
 cd ~/dotfiles
 stow --target="$HOME" hypr waybar kitty rofi wofi swaync waypaper fastfetch local-bin
 ```
@@ -76,6 +78,14 @@ monitor em foco. O script de alternancia nao adiciona trava nem espera.
 O Waypaper procura imagens em `~/Imagens`. Depois de escolher um wallpaper, os
 scripts geram a paleta em `~/.cache/wal` e atualizam Waybar, Rofi, Kitty, SwayNC,
 Cava e btop.
+
+O Waypaper abre centralizado em uma janela flutuante de 900x650, sem blur nem
+sombra. As cores das instancias abertas do Kitty sao atualizadas pelos sockets
+`/tmp/kitty-socket-*` usando `kitty-palette-sync.sh`.
+
+Firefox, Zed, Spotify, Obsidian, Nautilus, Chrome e o dashboard usam opacidade
+total. O Hyprlock envia automaticamente a entrada ao atingir quatro caracteres;
+ajuste ou remova `auto_submit_length` em `hyprlock.conf` conforme sua senha.
 
 O atalho `Super+Ctrl+D` abre o dashboard opcional e requer Fastfetch, Yazi,
 tty-clock, Unimatrix e Cava.

@@ -3,6 +3,7 @@
 @define-color theme_selected_fg_color #ffffff;
 
 window {
+    background-image: none;
     background-color: transparent;
     color: #e5e7ef;
     font-family: "Noto Sans", sans-serif;
@@ -61,9 +62,15 @@ entry selection {
     color: #ffffff;
 }
 
-scrolledwindow, viewport {
+window > box, scrolledwindow, viewport, grid {
+    background-image: none;
     background-color: transparent;
     border: none;
+}
+
+window decoration {
+    background-color: transparent;
+    box-shadow: none;
 }
 
 scrollbar {

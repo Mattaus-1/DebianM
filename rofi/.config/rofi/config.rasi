@@ -3,11 +3,11 @@
 * {
     bg-col:        @background;
     bg-col-right:  @background;
-    sel-col:       @selected-normal-background;
-    border-col:    @selected-active-background;
+    sel-col:       @color1;
+    border-col:    @color2;
     outer-border:  @urgent-background;
     fg-col:        #ffffff;
-    fg-muted:      @foreground;
+    fg-muted:      @color8;
 }
 
 configuration {
