@@ -3,6 +3,14 @@
 Configuracoes do meu desktop Debian/Hyprland, organizadas como pacotes para o
 [GNU Stow](https://www.gnu.org/software/stow/).
 
+## Capturas de tela
+
+![Desktop — captura 1](screenshots/print-2026-10-14_14-47-50-425113880.png)
+
+![Desktop — captura 2](screenshots/print-2026-10-14_14-47-41-943058158.png)
+
+![Desktop — captura 3](screenshots/print-2026-10-14_14-46-22-291402221.png)
+
 ## Conteudo
 
 - `hypr`: Hyprland em Lua, Hypridle, Hyprlock e scripts da sessao
@@ -29,6 +37,7 @@ Dependencias principais:
 hyprland hypridle hyprlock waybar swaync kitty rofi wofi waypaper
 swww pywal python3 python3-pil jq btop fastfetch cava yazi tty-clock unimatrix
 pipewire wireplumber nautilus google-chrome-stable
+grim slurp
 ```
 
 Tambem sao usadas as fontes JetBrains Mono, Symbols Nerd Font, FontAwesome,
@@ -71,6 +80,10 @@ atual usa `DP-3` e `HDMI-A-1`, com dois workspaces em cada monitor.
 
 `Super+Espaco` abre o Wofi. Use as setas para cima/baixo para selecionar um
 aplicativo, Enter para abrir e Esc para fechar.
+
+`Print` (ou `Fn+PrtSc`, dependendo do teclado) permite selecionar uma area com
+o mouse usando Slurp e captura com Grim. Salva em `~/Imagens/Screenshots`, com
+data e hora no nome do arquivo. Pressione Esc para cancelar.
 
 `Super+scroll`, em qualquer direcao, alterna entre os dois workspaces do
 monitor em foco. O script de alternancia nao adiciona trava nem espera.
