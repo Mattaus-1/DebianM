@@ -1,32 +1,35 @@
 @import "~/.cache/wal/colors-rofi-dark.rasi"
 
 * {
-    bg-col:        @background;
-    bg-col-right:  @background;
-    sel-col:       @color1;
-    border-col:    @color2;
-    outer-border:  @urgent-background;
-    fg-col:        #ffffff;
-    fg-muted:      @color8;
+    surface:          #100f0f;
+    surface-raised:   #1c1a19;
+    surface-hover:    #292624;
+    line:             #45403c;
+    accent:           #cec8c3;
+    text:             #f0eeeb;
+    text-muted:       #a19892;
+    text-on-accent:   #100f0f;
 }
 
 configuration {
-    modi:                       "drun,run,window";
-    show-icons:                 true;
-    icon-theme:                 "Adwaita";
-    display-drun:               "";
-    drun-display-format:        "{icon} {name}";
-    font:                       "JetBrains Mono 11";
+    modi:                 "drun,run,window";
+    show-icons:           true;
+    icon-theme:           "Adwaita";
+    display-drun:         "›";
+    drun-display-format:  "{name}";
+    font:                 "JetBrains Mono 11";
+    matching:             "fuzzy";
+    sort:                 true;
 }
 
 window {
-    width:             900px;
-    height:            500px;
-    padding:           0px;
-    border:            3px;
-    border-color:      @outer-border;
-    border-radius:     14px;
-    background-color:  @bg-col;
+    width:             880px;
+    height:            520px;
+    padding:           1px;
+    border:            1px;
+    border-color:      @line;
+    border-radius:     18px;
+    background-color:  @surface;
 }
 
 mainbox {
@@ -38,69 +41,116 @@ mainbox {
 }
 
 wallpaperbox {
-    width:             350px;
-    padding:           0px;
-    margin:            0px;
+    width:             320px;
     background-image:  url("~/.cache/wal/current_wallpaper", height);
-    border-radius:      14px 0px 0px 14px;
+    border-radius:     17px 0px 0px 17px;
 }
 
 rightbox {
-    width:             550px;
-    padding:           20px;
-    spacing:           14px;
-    background-color:  @bg-col-right;
-    border-radius:      0px 14px 14px 0px;
-    children:          [ inputbar, listview ];
+    width:             558px;
+    padding:           26px;
+    spacing:           17px;
+    background-color:  @surface;
+    border-radius:     0px 17px 17px 0px;
+    children:          [ titlebox, inputbar, listview, textbox-footer ];
+}
+
+titlebox {
+    orientation:       vertical;
+    spacing:           5px;
+    background-color:  transparent;
+    children:          [ textbox-title, textbox-subtitle ];
+}
+
+textbox-title {
+    content:           "R O F I";
+    font:              "JetBrains Mono Bold 16";
+    text-color:        @text;
+    background-color:  transparent;
+}
+
+textbox-subtitle {
+    content:           "Encontre o que precisa";
+    font:              "JetBrains Mono 10";
+    text-color:        @text-muted;
+    background-color:  transparent;
 }
 
 inputbar {
-    background-color:  @sel-col;
-    border-radius:      8px;
-    padding:            10px 12px;
-    children:          [ entry ];
+    background-color:  @surface-raised;
+    border:            1px;
+    border-color:      @line;
+    border-radius:     10px;
+    padding:           11px 14px;
+    children:          [ prompt, entry ];
+    spacing:           10px;
+}
+
+prompt {
+    enabled:           true;
+    text-color:        @accent;
+    background-color:  transparent;
 }
 
 entry {
     background-color:   transparent;
-    text-color:          @fg-col;
-    placeholder:         "Search...";
-    placeholder-color:   @fg-muted;
+    text-color:          @text;
+    placeholder:         "Buscar...";
+    placeholder-color:   @text-muted;
 }
 
 listview {
     background-color:  transparent;
     columns:            1;
-    lines:              8;
-    spacing:            4px;
-    cycle:              true;
+    lines:              7;
+    spacing:            5px;
+    cycle:              false;
     dynamic:            true;
+    scrollbar:          false;
 }
 
 element {
-    padding:            8px;
-    border:             0px;
-    border-radius:       8px;
+    padding:            10px 12px;
+    border-radius:      9px;
     background-color:   transparent;
-    text-color:          @fg-col;
+    text-color:          @text;
     orientation:         horizontal;
 }
 
+element normal active,
+element alternate active {
+    background-color:   @surface-hover;
+}
+
+element selected.normal,
+element selected.active,
+element selected.urgent {
+    background-color:    @surface-hover;
+    border:              1px;
+    border-color:        @accent;
+    text-color:           @text;
+}
+
+element selected.normal element-text,
+element selected.active element-text,
+element selected.urgent element-text {
+    text-color:           @text;
+}
+
 element-icon {
-    size:               24px;
-    vertical-align:      0.5;
+    size:               23px;
+    vertical-align:     0.5;
 }
 
 element-text {
     padding:            0px 10px;
-    vertical-align:      0.5;
-    text-color:          inherit;
+    vertical-align:     0.5;
+    text-color:         inherit;
 }
 
-element selected {
-    border:              10px;
-    border-color:        @border-col;
-    border-radius:        8px;
-    background-color:    @sel-col;
-    text-color:           @fg-col;
+textbox-footer {
+    content:           "↑ ↓  navegar     ↵  abrir     esc  fechar";
+    font:              "JetBrains Mono 9";
+    text-color:        @text-muted;
+    background-color:  transparent;
 }
