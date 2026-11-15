@@ -1,4 +1,4 @@
--- IridescentGlow/hyprland-dotfiles, adapted for Debian.
+-- IridescentGlow/hyprland-dotfiles, adapted for mattaus on Debian.
 require('config/aesthetics')
 require('config/windows')
 
@@ -50,6 +50,7 @@ hl.window_rule({name='yugioh-wine-desktop',match={class='^(explorer.exe)$',title
 hl.window_rule({name='dashboard',match={class='^(iridescent-dashboard)$'},opacity='1.0 1.0',workspace=1})
 hl.window_rule({name='chrome-opacity',match={class='^(google-chrome)$'},opacity='1.0 1.0'})
 hl.on('hyprland.start', function()
+    hl.exec_cmd('systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP && systemctl --user start hyprpolkitagent.service')
     hl.exec_cmd("sh -c 'pgrep -x swww-daemon >/dev/null || " .. home .. "/.local/bin/swww-daemon'")
     hl.exec_cmd('sh -c "sleep 2; ' .. home .. '/.local/bin/wallpaper-picker --restore"')
     hl.exec_cmd('hypridle')
