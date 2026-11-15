@@ -1,0 +1,6 @@
+[Unit]
+Description=Synchronize Waybar palette with Kitty
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/.config/hypr/scripts/waybar-kitty-sync.py

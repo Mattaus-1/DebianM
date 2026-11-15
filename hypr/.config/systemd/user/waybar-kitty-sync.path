@@ -1,0 +1,10 @@
+[Unit]
+Description=Watch Waybar colors for Kitty synchronization
+
+[Path]
+PathChanged=%h/.cache/wal/colors-waybar.css
+PathChanged=%h/.config/waybar/style.css
+Unit=waybar-kitty-sync.service
+
+[Install]
+WantedBy=default.target

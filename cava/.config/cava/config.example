@@ -1,0 +1,13 @@
+[general]
+framerate = 60
+
+[output]
+method = noncurses
+
+[color]
+background = default
+gradient = 1
+gradient_count = 3
+gradient_color_1 = "#888888"
+gradient_color_2 = "#aaaaaa"
+gradient_color_3 = "#dddddd"

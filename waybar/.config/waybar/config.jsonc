@@ -16,8 +16,8 @@
   },
   "tray": {"icon-size": 16, "spacing": 8},
   "clock": {"format": " {:%H:%M:%S}", "interval": 1, "tooltip-format": "{:%A, %d de %B de %Y}"},
-  "cpu": {"format": "{usage}% 󰍛", "on-click": "kitty -e btop"},
-  "memory": {"format": "{used:0.1f}G 󰾆", "on-click": "kitty -e btop"},
+  "cpu": {"format": "{usage}% 󰍛", "on-click": "bash ~/.config/hypr/scripts/open-btop.sh"},
+  "memory": {"format": "{used:0.1f}G 󰾆", "on-click": "bash ~/.config/hypr/scripts/open-btop.sh"},
   "disk": {"path": "/", "format": "{percentage_used}% 󰋊"},
   "pulseaudio": {"format": "{icon} {volume}%", "format-muted": "󰖁", "format-icons": {"default": ["", "", ""]}, "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"}
 }

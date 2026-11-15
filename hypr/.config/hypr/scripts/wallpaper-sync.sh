@@ -9,9 +9,8 @@ flock 9
 swww img "$wallpaper" --transition-type fade --transition-duration 1
 printf '%s\n' "$wallpaper" > "$HOME/.local/state/wallpaper-current"
 python3 "$HOME/.config/hypr/scripts/wal-palette.py" "$wallpaper"
-bash "$HOME/.config/hypr/scripts/kitty-palette-sync.sh"
 ln -sfn "$wallpaper" "$HOME/.cache/wal/current_wallpaper"
 python3 "$HOME/.config/hypr/scripts/sync-palette.py"
+python3 "$HOME/.config/hypr/scripts/waybar-kitty-sync.py" --already-locked
 bash "$HOME/.config/hypr/scripts/btop-pywal-theme.sh"
-if pgrep -u "$UID" -x waybar >/dev/null; then pkill -u "$UID" -USR2 -x waybar; fi
 if pgrep -u "$UID" -x swaync >/dev/null; then timeout 3 swaync-client -rs >/dev/null 2>&1 || true; fi

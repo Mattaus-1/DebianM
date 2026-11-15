@@ -99,7 +99,7 @@ window#waybar.hidden {
 }
 
 #idle_inhibitor {
-    color: @color2;
+    color: @color4;
 }
 
 #bluetooth,
@@ -108,7 +108,7 @@ window#waybar.hidden {
 }
 
 #battery {
-    color: @cursor;
+    color: @color4;
 }
 
 @keyframes blink {
@@ -129,24 +129,24 @@ window#waybar.hidden {
 }
 
 #clock {
-    color: @cursor;
+    color: @color4;
 }
 
 #cpu {
-    color: @color2;
+    color: @color4;
 }
 
 #custom-keyboard,
 #memory {
-    color: @color2;
+    color: @color4;
 }
 
 #disk {
-    color: @color2;
+    color: @color4;
 }
 
 #temperature {
-    color: @color2;
+    color: @color4;
 }
 
 #temperature.critical {
@@ -161,7 +161,7 @@ window#waybar.hidden {
 }
 
 #keyboard-state {
-    color: @color2;
+    color: @color4;
 }
 
 #workspaces button {
@@ -191,7 +191,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-    color: @color6;
+    color: @color4;
     border-radius: 10px;
     padding-left: 8px;
     padding-right: 8px;
@@ -223,15 +223,15 @@ window#waybar.hidden {
 }
 
 #custom-menu {
-    color: @color6;
+    color: @color4;
 }
 
 #custom-power {
-    color: @color6;
+    color: @color4;
 }
 
 #custom-updater {
-    color: @color6;
+    color: @color4;
 }
 
 #custom-light_dark {
@@ -239,19 +239,19 @@ window#waybar.hidden {
 }
 
 #custom-weather {
-    color: @color6;
+    color: @color4;
 }
 
 #custom-lock {
-    color: @color6;
+    color: @color4;
 }
 
 #pulseaudio {
-    color: @color6;
+    color: @color4;
 }
 
 #pulseaudio.bluetooth {
-    color: @color6;
+    color: @color4;
 }
 #pulseaudio.muted {
     color: @color8;
@@ -266,7 +266,7 @@ window#waybar.hidden {
 }
 
 #network {
-    color: @cursor;
+    color: @color4;
 }
 
 #network.disconnected,

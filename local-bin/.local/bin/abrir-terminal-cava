@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Layout flutuante para um monitor de 1920x1080. Usa as configurações atuais do Kitty e CAVA.
+monitor="${1:-DP-3}"
+for spec in 'referencia-terminal|810|535|78|172' 'referencia-cava|680|290|1128|690'; do
+  IFS='|' read -r class width height x y <<< "$spec"
+  hyprctl eval "hl.window_rule({ match = { class = '^${class}$' }, float = true, size = {${width}, ${height}}, move = {${x}, ${y}}, monitor = '${monitor}' })" >/dev/null
+  if ! hyprctl clients -j | jq -e --arg class "$class" '.[] | select(.class == $class)' >/dev/null; then
+    if [[ "$class" == referencia-cava ]]; then
+      setsid -f kitty --class "$class" --title CAVA cava
+    else
+      setsid -f kitty --class "$class" --title Terminal
+    fi
+  fi
+done
